@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./src/main.ts",
   "scripts": {
-    "build": "esbuild src/game.ts --bundle --outfile=dist/game.js --format=esm --sourcemap"
+    "build": "esbuild src/game.ts --bundle --minify --outfile=dist/game.js --format=esm --sourcemap"
 
   },
   "keywords": [],
