@@ -76,23 +76,6 @@ pnpm run build
 
 This will bundle the TypeScript source into `dist/game.js`.
 
-### Run a local server
-
-To play the game, you must serve the files over HTTP.  
-You can use Python’s built-in server:
-
-```bash
-python3 -m http.server 8080
-```
-
-Or use pnpm’s static server:
-
-```bash
-pnpm exec serve .
-```
-
-Then open [http://localhost:8080](http://localhost:8080) (or the port you chose) in your browser.
-
 ## Game Usage
 
 - **Move:** Arrow keys or A/D

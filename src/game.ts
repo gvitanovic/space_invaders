@@ -31,8 +31,3 @@ function loop(now: number) {
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
-
-// Create a few more invaders if starting empty (in case resetGame didn't populate)
-// if (InvaderTag.size === 0) {
-//   for (let i = 0; i < 6; i++) spawnInvader(40 + i * 60, 40);
-// }

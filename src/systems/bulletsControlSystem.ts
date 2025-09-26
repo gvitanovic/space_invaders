@@ -8,7 +8,6 @@ export function bulletSystem(dt: number) {
     p.y += v.y * dt;
     // remove bullets off-screen
     if (p.y < -20 || p.y > CANVAS_H + 20) {
-      // remove
       Position.delete(e);
       Velocity.delete(e);
       Sprite.delete(e);

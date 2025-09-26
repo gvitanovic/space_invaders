@@ -58,7 +58,6 @@ export enum GameState {
   Playing = "playing",
   GameOver = "gameover",
   Win = "win",
-  Shoot = "shoot",
 }
 
 export let currentState: GameState = GameState.Init;

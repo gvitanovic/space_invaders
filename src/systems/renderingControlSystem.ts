@@ -2,7 +2,7 @@ import { createCanvas } from "../canvas";
 import { Sprite, Position, InvaderTag, BoomEffects } from "../components";
 import { gameVars } from "../utils";
 import { CANVAS_W, CANVAS_H } from "../consts";
-import { userInput as input } from "../input";
+import { userInput } from "../input";
 
 // Animation state for invaders
 let invaderAnimFrame = 0;
@@ -14,7 +14,7 @@ const ctx = createCanvas().getContext("2d")!;
 
 export function renderSystem() {
   // Animate invaders only if not paused or game over
-  if (!gameVars.gameOver && !input.pause) {
+  if (!gameVars.gameOver && !userInput.pause) {
     const now = performance.now() / 1000;
     if (now - lastAnimTime > INVADER_ANIM_INTERVAL) {
       invaderAnimFrame = (invaderAnimFrame + 1) % 2;
@@ -99,7 +99,7 @@ export function renderSystem() {
     ctx.fillText("Press Enter to restart", CANVAS_W / 2, CANVAS_H / 2 + 30);
     ctx.textAlign = "left";
   }
-  if (!gameVars.gameOver && input.pause) {
+  if (!gameVars.gameOver && userInput.pause) {
     ctx.fillStyle = "rgba(0,0,0,0.5)";
     ctx.fillRect(0, CANVAS_H / 2 - 40, CANVAS_W, 80);
     ctx.fillStyle = "#fff";

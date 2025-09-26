@@ -38,7 +38,7 @@ export function spawnBullet(
   shooterId?: number
 ) {
   const e = createEntity();
-  Position.set(e, { x, y, shooterId }); // add shooterId for enemy bullets
+  Position.set(e, { x, y });
   Velocity.set(e, { x: 0, y: vy });
   Sprite.set(e, { w: 4, h: 12, color: fromPlayer ? "#fff" : "#f44" });
   BulletTag.add(e);

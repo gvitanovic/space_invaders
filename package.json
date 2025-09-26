@@ -5,7 +5,8 @@
   "type": "module",
   "main": "./src/main.ts",
   "scripts": {
-    "build": "esbuild src/game.ts --bundle --minify --outfile=dist/game.js --format=esm --sourcemap"
+    "typecheck": "tsc --noEmit",
+    "build": "pnpm run typecheck && esbuild src/game.ts --bundle --minify --outfile=dist/game.js --format=esm --sourcemap"
 
   },
   "keywords": [],
