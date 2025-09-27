@@ -6,14 +6,15 @@
   "main": "./src/main.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "pnpm run typecheck && esbuild src/game.ts --bundle --minify --outfile=dist/game.js --format=esm --sourcemap"
-
+    "build": "pnpm run typecheck && esbuild src/game.ts --bundle --minify --outfile=dist/game.js --format=esm --sourcemap",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
   "devDependencies": {
-    "esbuild": "^0.25.10"
+    "esbuild": "^0.25.10",
+    "husky": "^9.1.7"
   }
 }
