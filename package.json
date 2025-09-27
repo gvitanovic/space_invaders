@@ -6,15 +6,20 @@
   "main": "./src/main.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "pnpm run typecheck && esbuild src/game.ts --bundle --minify --outfile=dist/game.js --format=esm --sourcemap",
-    "prepare": "husky"
+    "clean": "rimraf dist/*",
+    "build": "pnpm run typecheck && pnpm run clean &&esbuild src/game.ts --bundle --minify --outfile=dist/game.js --format=esm",
+    "build:watch": "esbuild src/game.ts --bundle --outfile=dist/game.js --format=esm --sourcemap --watch",
+    "dev": "concurrently \"pnpm run build:watch\" \"web-dev-server --root . --open --watch --port 8080\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
   "devDependencies": {
+    "@web/dev-server": "^0.4.6",
+    "concurrently": "^9.2.1",
     "esbuild": "^0.25.10",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "rimraf": "^6.0.1"
   }
 }
